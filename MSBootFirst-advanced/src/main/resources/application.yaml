@@ -1,0 +1,10 @@
+spring:
+profiles: development
+server:
+  port: 9090
+mfaruga:
+  custom1: Development
+security:
+  user:
+    name: guest
+    password: guest123

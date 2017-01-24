@@ -1,0 +1,22 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+profiles: development
+server:
+  port: 9090
+mfaruga:
+  custom1: Development
+security:
+  user:
+    name: guest
+    password: guest123
+  oauth2:
+    client:
+      clientId: trustedclient
+      clientSecret: trustedclient123
+      authorized-grant-types: authorization_code,refresh_token,password
+      scope: openid
+    
