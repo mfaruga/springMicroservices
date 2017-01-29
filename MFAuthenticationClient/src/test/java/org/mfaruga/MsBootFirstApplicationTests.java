@@ -14,14 +14,14 @@ public class MsBootFirstApplicationTests {
 	@Test
 	public void contextLoads() {
 		RestTemplate restTemplate = new RestTemplate();
-		Greet greet = restTemplate.getForObject("http://localhost:9000", Greet.class);
+		Greet greet = restTemplate.getForObject("http://localhost:8080", Greet.class);
 		Assert.assertNotEquals("Different message!", greet.getMessage());
 	}
 
 	@Test
 	public void testVanillaService() {
 		RestTemplate restTemplate = new RestTemplate();
-		Greet greet = restTemplate.getForObject("http://localhost:9000", Greet.class);
+		Greet greet = restTemplate.getForObject("http://localhost:8080", Greet.class);
 		Assert	.assertEquals("Hello World!", greet.getMessage());
 	}
 	

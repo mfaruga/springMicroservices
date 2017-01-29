@@ -1,0 +1,19 @@
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret      
+      scope: read,write
+      auto-approve-scopes: '.*'
+      
+spring: 
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate: 
+      ddl-auto: create
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/JPABasic
+    username: faro
+    password: faro
