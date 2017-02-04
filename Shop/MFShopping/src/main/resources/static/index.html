@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="mfshop">
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+</head>
+
+<body ng-controller="SomeController as store">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="ui-bootstrap-tpls-0.13.4.min.js"></script>	
+	<script type="text/javascript" src="hello.js"></script>
+
+	<form name="reviewForm" ng-controller="StoreController as reviewCtrl"
+		ng-submit="reviewForm.$valid && reviewCtrl.addProduct()" novalidate>
+
+		<blockquote>
+			Selected: {{reviewCtrl.selected}}<br>
+			States: {{reviewCtrl.states}}
+		</blockquote>
+
+		<blockquote>
+			<b>Name: {{reviewCtrl.product.name}}</b> 
+			<cite>Description: {{reviewCtrl.product.description}}</cite>
+		</blockquote>
+
+		Name:<input ng-model="reviewCtrl.product.name" 			
+			type="text" placeholder="enter a name" required />
+		Description:<input ng-model="reviewCtrl.product.description" type="text" placeholder="enter a description" required />
+		<input name="states" id="states" type="text" placeholder="enter a state" ng-model="reviewCtrl.selected" typeahead="state for state in reviewCtrl.getStates($viewValue)" class="form-control"/>
+
+		<div>review form is {{reviewForm.$valid}}</div>
+
+		<input type="submit" value="submit" />
+	</form>
+
+	{{ StoreController.states }}
+
+	<ul class="list-group">
+		<!-- here we are iterating over set of products in an array/collection -->
+		<li class="list-group-item" ng-repeat="product in store.products">
+			<h3>Name: {{product.name}}</h1>
+			<h4>Description: {{product.description}}</h2>
+		</li>
+	</ul>
+
+</body>
+</html>
